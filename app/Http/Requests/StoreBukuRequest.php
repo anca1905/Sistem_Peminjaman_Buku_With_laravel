@@ -11,7 +11,7 @@ class StoreBukuRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class StoreBukuRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'judul' => 'required',
+            'penulis' => 'required',
+            'tahun' => 'required',
+            'kategori' => 'required',
+            'user_id' => 'required',
+            'buku_id' => 'required',
+            'tgl_pinjam' => 'required|date',
+            'tgl_kembali' => 'required|date',
         ];
     }
 }

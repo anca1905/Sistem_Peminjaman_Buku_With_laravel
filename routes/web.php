@@ -23,4 +23,4 @@ Route::get('/', function () {
 
 Route::resource('buku', BukuController::class);
 Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota.index');
-Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
+Route::resource('peminjaman', PeminjamanController::class);

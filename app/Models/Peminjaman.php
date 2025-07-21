@@ -9,12 +9,19 @@ class Peminjaman extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'buku_id',
+        'tgl_pinjam',
+        'tgl_kembali',
+    ];
+
     public function buku(){
         return $this->belongsTo(Buku::class);
     }
 
     public function anggota(){
-        return $this->belongsTo(Anggota::class);
+        return $this->belongsTo(Anggota::class, 'user_id');
     }
 
 }

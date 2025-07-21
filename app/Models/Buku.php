@@ -16,7 +16,7 @@ class Buku extends Model
         'kategori',
     ];
 
-    public function buku(){
-        return $this->hasMany(User::class);
+    public function peminjaman(){
+        return $this->hasMany(Peminjaman::class);
     }
 }

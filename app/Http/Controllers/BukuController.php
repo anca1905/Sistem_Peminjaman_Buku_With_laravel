@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBukuRequest;
 use App\Models\Buku;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -27,8 +29,9 @@ class BukuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBukuRequest $request)
     {
+        $data = $request->validated();
 
         $data['judul'] = $request->judul;
         $data['penulis'] = $request->penulis;
